@@ -1,14 +1,14 @@
-{
-	"AWSTemplateFormatVersion" : "2010-09-09",
-	"Transform" : "AWS::Serverless-2016-10-31",
-	"Description" : "An AWS Serverless Application.",
+﻿{
+	"AWSTemplateFormatVersion": "2010-09-09",
+	"Transform": "AWS::Serverless-2016-10-31",
+	"Description": "An AWS Serverless Application.",
 
-	"Resources" : {
+	"Resources": {
 
-		"Get" : {
-			"Type" : "AWS::Serverless::Function",
+		"Get": {
+			"Type": "AWS::Serverless::Function",
 			"Properties": {
-				"Handler": "Echo.Lambda::Echo.Lambda.Functions::Get",
+				"Handler": "Echo.Lambda::Echo.Lambda.GatewayFunction::Get",
 				"Runtime": "dotnetcore2.1",
 				"CodeUri": "",
 				"MemorySize": 256,
@@ -29,10 +29,10 @@
 
 	},
 
-	"Outputs" : {
-		"ApiURL" : {
-			"Description" : "API endpoint URL for Prod environment",
-			"Value" : { "Fn::Sub" : "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/" }
+	"Outputs": {
+		"ApiURL": {
+			"Description": "API endpoint URL for Prod environment",
+			"Value": { "Fn::Sub": "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/" }
 		}
 	}
 }
